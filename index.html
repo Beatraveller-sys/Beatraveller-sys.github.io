@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Be a Traveler | 韓国留学サポート</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{--orange:#E8721A;--orange-light:#F5A155;--orange-pale:#FDF0E4;--green:#3A7D44;--green-light:#6BAF74;--green-pale:#EAF4EC;--cream:#FFFAF4;--dark:#2C2415;--mid:#6B5A3E;--light:#9C8B72;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Noto Sans JP',sans-serif;background:var(--cream);color:var(--dark);line-height:1.7;}
+  a{text-decoration:none;color:inherit;}
+  nav{position:sticky;top:0;z-index:100;background:rgba(255,250,244,0.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(232,114,26,0.15);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:68px;}
+  .logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--orange);}
+  .logo span{color:var(--green);font-style:italic;}
+  .nav-links{display:flex;gap:28px;}
+  .nav-links a{font-size:13px;color:var(--mid);font-weight:500;transition:color .2s;}
+  .nav-links a:hover{color:var(--orange);}
+  .nav-cta{background:var(--orange);color:white;font-size:13px;font-weight:700;padding:10px 22px;border-radius:50px;transition:background .2s;}
+  .nav-cta:hover{background:#C8601A;}
+
+  .hero{padding:96px 5% 80px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1200px;margin:0 auto;}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--orange-pale);border:1px solid rgba(232,114,26,0.25);padding:6px 14px;border-radius:50px;font-size:13px;color:var(--orange);font-weight:700;margin-bottom:24px;}
+  .hero-badge::before{content:"🇰🇷";font-size:16px;}
+  h1{font-family:'Playfair Display',serif;font-size:clamp(34px,4vw,52px);line-height:1.2;font-weight:700;color:var(--dark);margin-bottom:20px;}
+  h1 em{color:var(--orange);font-style:italic;}
+  .hero-sub{font-size:16px;color:var(--mid);margin-bottom:36px;line-height:1.9;}
+  .hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn-primary{background:var(--orange);color:white;padding:14px 28px;border-radius:50px;font-weight:700;font-size:15px;transition:all .2s;box-shadow:0 4px 20px rgba(232,114,26,.35);}
+  .btn-primary:hover{background:#C8601A;transform:translateY(-2px);}
+  .btn-secondary{border:2px solid var(--green);color:var(--green);padding:14px 28px;border-radius:50px;font-weight:700;font-size:15px;transition:all .2s;}
+  .btn-secondary:hover{background:var(--green-pale);}
+  .hero-visual{background:linear-gradient(135deg,var(--orange-pale),var(--green-pale));border-radius:24px;padding:36px;position:relative;overflow:hidden;}
+  .hero-visual::before{content:"✈";position:absolute;top:12px;right:20px;font-size:44px;opacity:.12;transform:rotate(35deg);}
+  .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .stat-card{background:white;border-radius:14px;padding:18px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.06);}
+  .stat-num{font-size:28px;font-weight:700;color:var(--orange);line-height:1;}
+  .stat-card:nth-child(2) .stat-num,.stat-card:nth-child(3) .stat-num{color:var(--green);}
+  .stat-label{font-size:11px;color:var(--light);margin-top:5px;}
+  .hero-quote{margin-top:14px;background:var(--orange);border-radius:14px;padding:16px 18px;color:white;font-size:13px;line-height:1.7;font-style:italic;}
+  .hero-quote strong{font-style:normal;display:block;font-size:11px;opacity:.8;margin-top:6px;}
+
+  .section{padding:88px 5%;max-width:1200px;margin:0 auto;}
+  .section-label{display:inline-flex;align-items:center;gap:8px;background:var(--green-pale);color:var(--green);padding:6px 14px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px;}
+  h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3vw,38px);font-weight:700;color:var(--dark);margin-bottom:12px;}
+  .section-desc{font-size:15px;color:var(--mid);max-width:520px;margin-bottom:48px;}
+
+  .diff-section{background:var(--dark);padding:88px 5%;}
+  .diff-inner{max-width:1200px;margin:0 auto;}
+  .diff-section .section-label{background:rgba(255,255,255,.1);color:var(--orange-light);}
+  .diff-section h2{color:white;}
+  .diff-section .section-desc{color:rgba(255,255,255,.6);}
+  .diff-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+  .diff-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:28px 22px;transition:background .2s;}
+  .diff-card:hover{background:rgba(255,255,255,.1);}
+  .diff-icon{font-size:32px;margin-bottom:14px;}
+  .diff-title{font-size:16px;font-weight:700;color:white;margin-bottom:10px;}
+  .diff-desc{font-size:13px;color:rgba(255,255,255,.6);line-height:1.8;}
+  .diff-accent{color:var(--orange-light);font-weight:700;}
+
+  .staff-section{background:var(--orange-pale);padding:88px 5%;}
+  .staff-inner{max-width:1200px;margin:0 auto;}
+  .staff-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  .staff-card{background:white;border-radius:24px;padding:32px 28px;border:1px solid rgba(232,114,26,.15);display:flex;gap:20px;align-items:flex-start;}
+  .staff-avatar{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;}
+  .staff-avatar.jp{background:var(--orange-pale);}
+  .staff-avatar.kr{background:var(--green-pale);}
+  .staff-name{font-size:17px;font-weight:700;color:var(--dark);margin-bottom:4px;}
+  .staff-role{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px;}
+  .staff-role.jp{color:var(--orange);}
+  .staff-role.kr{color:var(--green);}
+  .staff-bio{font-size:13px;color:var(--mid);line-height:1.8;}
+  .staff-tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;margin-top:10px;}
+
+  .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;}
+  .service-card{background:white;border-radius:20px;padding:0;border:1px solid rgba(0,0,0,.06);overflow:hidden;transition:transform .2s,box-shadow .2s;}
+  .service-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.1);}
+  .service-head{padding:28px 24px 20px;}
+  .service-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:14px;background:var(--orange-pale);}
+  .service-card.green .service-icon{background:var(--green-pale);}
+  .service-title{font-size:18px;font-weight:700;color:var(--dark);margin-bottom:8px;}
+  .service-desc{font-size:13px;color:var(--mid);line-height:1.8;}
+  .service-includes{padding:20px 24px;border-top:1px solid rgba(0,0,0,.06);background:rgba(253,240,228,.4);}
+  .service-card.green .service-includes{background:rgba(234,244,236,.4);}
+  .includes-label{font-size:11px;font-weight:700;color:var(--light);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px;}
+  .includes-list{list-style:none;display:flex;flex-direction:column;gap:7px;}
+  .includes-list li{font-size:13px;color:var(--mid);display:flex;gap:8px;align-items:flex-start;}
+  .includes-list li::before{content:"✓";color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px;}
+
+  .learning-section{padding:88px 5%;background:var(--green-pale);}
+  .learning-inner{max-width:1200px;margin:0 auto;}
+  .learning-section .section-label{background:rgba(58,125,68,.15);color:var(--green);}
+  .learning-context{background:white;border-radius:16px;padding:18px 22px;border-left:4px solid var(--green);margin-bottom:36px;font-size:14px;color:var(--mid);line-height:1.8;max-width:680px;}
+  .learning-context strong{color:var(--green);}
+  .levels-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;}
+  .level-card{background:white;border-radius:18px;padding:22px 18px;border:1.5px solid rgba(58,125,68,.15);transition:transform .2s,box-shadow .2s;}
+  .level-card:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(58,125,68,.12);}
+  .level-badge{display:inline-block;font-size:11px;font-weight:700;padding:4px 10px;border-radius:50px;margin-bottom:12px;}
+  .lv1{background:#E8F5E9;color:#2E7D32;}.lv2{background:#FFF3E0;color:#E65100;}.lv3{background:#E3F2FD;color:#1565C0;}.lv4{background:#F3E5F5;color:#6A1B9A;}.lv5{background:var(--orange-pale);color:var(--orange);}
+  .level-title{font-size:15px;font-weight:700;color:var(--dark);margin-bottom:4px;}
+  .level-target{font-size:11px;color:var(--light);margin-bottom:10px;}
+  .level-items{list-style:none;display:flex;flex-direction:column;gap:5px;}
+  .level-items li{font-size:12px;color:var(--mid);padding-left:12px;position:relative;}
+  .level-items li::before{content:"·";position:absolute;left:0;color:var(--green);font-weight:700;font-size:16px;line-height:1.3;}
+
+  .flow-section{background:#1E1810;padding:88px 5%;position:relative;overflow:hidden;}
+  .flow-section::before{content:"";position:absolute;top:-80px;right:-80px;width:300px;height:300px;border-radius:50%;background:rgba(232,114,26,.1);}
+  .flow-inner{max-width:1200px;margin:0 auto;}
+  .flow-section .section-label{background:rgba(255,255,255,.08);color:var(--orange-light);}
+  .flow-section h2{color:white;}
+  .flow-section .section-desc{color:rgba(255,255,255,.55);}
+  .steps{display:flex;gap:0;overflow-x:auto;padding-bottom:8px;}
+  .step{flex:1;min-width:155px;padding:24px 16px;position:relative;text-align:center;}
+  .step:not(:last-child)::after{content:"→";position:absolute;right:-8px;top:50%;transform:translateY(-50%);color:var(--orange-light);font-size:18px;z-index:2;}
+  .step-num{width:42px;height:42px;border-radius:50%;background:var(--orange);color:white;font-size:17px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;}
+  .step:nth-child(even) .step-num{background:var(--green);}
+  .step-title{font-size:13px;font-weight:700;color:white;margin-bottom:6px;}
+  .step-desc{font-size:11px;color:rgba(255,255,255,.5);line-height:1.6;}
+
+  .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;}
+  .price-card{background:white;border-radius:24px;border:1.5px solid rgba(0,0,0,.08);padding:30px 26px;transition:transform .2s;position:relative;}
+  .price-card:hover{transform:translateY(-3px);}
+  .price-card.featured{border-color:var(--orange);box-shadow:0 0 0 4px rgba(232,114,26,.1);}
+  .featured-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--orange);color:white;font-size:11px;font-weight:700;padding:4px 16px;border-radius:50px;white-space:nowrap;}
+  .plan-name{font-size:12px;font-weight:700;color:var(--mid);letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px;}
+  .price-main{display:flex;align-items:baseline;gap:4px;margin-bottom:3px;}
+  .price-currency{font-size:20px;font-weight:700;color:var(--dark);}
+  .price-num{font-size:48px;font-weight:700;color:var(--dark);line-height:1;}
+  .price-tax{font-size:12px;color:var(--light);margin-bottom:6px;}
+  .price-card.featured .price-num{color:var(--orange);}
+  .price-card.featured .price-currency{color:var(--orange);}
+  .plan-note{font-size:11px;color:var(--orange);font-weight:700;margin-bottom:8px;}
+  .plan-desc{font-size:13px;color:var(--light);margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid rgba(0,0,0,.07);}
+  .plan-features{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:24px;}
+  .plan-features li{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--mid);}
+  .plan-features li::before{content:"✓";color:var(--green);font-weight:700;flex-shrink:0;}
+  .plan-features li.opt{color:var(--orange);}
+  .plan-features li.opt::before{color:var(--orange);}
+  .plan-btn{display:block;text-align:center;padding:13px;border-radius:50px;font-weight:700;font-size:14px;transition:all .2s;}
+  .btn-outline{border:2px solid var(--dark);color:var(--dark);}
+  .btn-outline:hover{background:var(--dark);color:white;}
+  .btn-fill{background:var(--orange);color:white;box-shadow:0 4px 16px rgba(232,114,26,.3);}
+  .btn-fill:hover{background:#C8601A;}
+
+  .faq-list{max-width:720px;display:flex;flex-direction:column;gap:11px;}
+  .faq-item{background:white;border-radius:14px;border:1px solid rgba(0,0,0,.07);overflow:hidden;}
+  .faq-q{padding:16px 22px;font-weight:700;font-size:14px;color:var(--dark);cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none;}
+  .faq-q .arrow{color:var(--orange);transition:transform .2s;}
+  .faq-a{padding:0 22px;max-height:0;overflow:hidden;font-size:13px;color:var(--mid);line-height:1.8;transition:max-height .3s ease,padding .3s ease;}
+  .faq-item.open .faq-q .arrow{transform:rotate(90deg);}
+  .faq-item.open .faq-a{max-height:220px;padding:0 22px 16px;}
+
+  .cta-banner{background:linear-gradient(135deg,var(--orange),#C8601A);padding:80px 5%;text-align:center;position:relative;overflow:hidden;}
+  .cta-banner::before{content:"✈";position:absolute;left:5%;top:50%;transform:translateY(-50%) rotate(25deg);font-size:120px;opacity:.1;}
+  .cta-banner h2{color:white;font-size:clamp(24px,3vw,38px);margin-bottom:12px;}
+  .cta-banner p{color:rgba(255,255,255,.85);font-size:16px;margin-bottom:30px;}
+  .btn-white{background:white;color:var(--orange);padding:15px 34px;border-radius:50px;font-weight:700;font-size:15px;display:inline-block;transition:all .2s;box-shadow:0 4px 20px rgba(0,0,0,.15);}
+  .btn-white:hover{transform:translateY(-2px);}
+
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+  .contact-info{display:flex;flex-direction:column;gap:18px;}
+  .contact-item{display:flex;gap:14px;align-items:flex-start;}
+  .contact-icon{width:42px;height:42px;border-radius:11px;background:var(--orange-pale);display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0;}
+  .contact-item h4{font-size:13px;font-weight:700;color:var(--dark);margin-bottom:3px;}
+  .contact-item p{font-size:13px;color:var(--mid);}
+  .contact-form{background:white;border-radius:22px;padding:32px;border:1px solid rgba(0,0,0,.07);}
+  .form-group{margin-bottom:16px;}
+  .form-group label{display:block;font-size:12px;font-weight:700;color:var(--dark);margin-bottom:7px;}
+  .form-group input,.form-group select,.form-group textarea{width:100%;padding:11px 14px;border:1.5px solid rgba(0,0,0,.1);border-radius:9px;font-family:'Noto Sans JP',sans-serif;font-size:13px;color:var(--dark);background:var(--cream);outline:none;transition:border-color .2s;}
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--orange);}
+  .form-group textarea{height:90px;resize:vertical;}
+  .form-submit{width:100%;padding:14px;background:var(--orange);color:white;border:none;border-radius:50px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Noto Sans JP',sans-serif;transition:all .2s;box-shadow:0 4px 16px rgba(232,114,26,.35);}
+  .form-submit:hover{background:#C8601A;}
+
+  footer{background:var(--dark);padding:56px 5% 28px;color:rgba(255,255,255,.6);}
+  .footer-inner{max-width:1200px;margin:0 auto;}
+  .footer-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:36px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:28px;}
+  .footer-logo{font-family:'Playfair Display',serif;font-size:20px;color:white;margin-bottom:8px;}
+  .footer-logo span{color:var(--orange-light);font-style:italic;}
+  .footer-tagline{font-size:12px;max-width:240px;line-height:1.7;}
+  .footer-links h4{color:white;font-size:13px;font-weight:700;margin-bottom:12px;}
+  .footer-links ul{list-style:none;display:flex;flex-direction:column;gap:7px;}
+  .footer-links a{font-size:12px;color:rgba(255,255,255,.45);transition:color .2s;}
+  .footer-links a:hover{color:var(--orange-light);}
+  .footer-bottom{text-align:center;font-size:11px;color:rgba(255,255,255,.25);}
+
+  @media(max-width:768px){
+    .hero,.contact-grid,.staff-grid{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+  }
+</style>
+
+<nav>
+  <div class="logo">Be a <span>Traveler</span></div>
+  <div class="nav-links">
+    <a href="#difference">選ばれる理由</a>
+    <a href="#staff">スタッフ</a>
+    <a href="#services">サービス</a>
+    <a href="#pricing">料金</a>
+    <a href="#contact">お問い合わせ</a>
+  </div>
+  <a href="#contact" class="nav-cta">無料相談する</a>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="hero-badge">現役・延世大生が運営する留学サポート</div>
+    <h1>韓国留学、<br><em>一緒に</em><br>叶えよう。</h1>
+    <p class="hero-sub">語学堂・学部正規入学の手続き代行から住居探し・書類添削・現地生活サポートまで、<strong style="color:var(--dark);">実際に韓国にいるスタッフ</strong>が親身にサポートします。</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">無料相談を申し込む</a>
+      <a href="#services" class="btn-secondary">サービスを見る</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-num">95%</div><div class="stat-label">入学成功率</div></div>
+      <div class="stat-card"><div class="stat-num">日韓</div><div class="stat-label">バイリンガル対応</div></div>
+      <div class="stat-card"><div class="stat-num">24h</div><div class="stat-label">メールで気軽に相談</div></div>
+      <div class="stat-card"><div class="stat-num">現地</div><div class="stat-label">韓国在住スタッフ</div></div>
+    </div>
+    <div class="hero-quote">
+      「他のエージェントより全然気楽に相談できて、住居も語学の不安も全部解消されました。」
+      <strong>— ご利用者様のご感想（延世大学語学堂 進学）</strong>
+    </div>
+  </div>
+</section>
+
+<section class="diff-section" id="difference">
+  <div class="diff-inner">
+    <div class="section-label">他とここが違う</div>
+    <h2 style="color:white;">Be a Travelerが<br>選ばれる4つの理由。</h2>
+    <p class="section-desc">大手エージェントにはできない、リアルで温かいサポートがここにあります。</p>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <div class="diff-icon">💬</div>
+        <div class="diff-title">気軽に話せる距離感</div>
+        <div class="diff-desc">メールで<span class="diff-accent">友達に相談するような気軽さ</span>でやりとりできます。「こんな質問してもいい？」と遠慮しなくて大丈夫。些細な不安もすぐ聞いてください。</div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">📝</div>
+        <div class="diff-title">書類添削を丁寧にサポート</div>
+        <div class="diff-desc">志望動機書・자기소개서の添削は<span class="diff-accent">何度でも対応</span>。韓国語ネイティブスタッフが文章の自然さまでチェックし、合格に近い書類に仕上げます。</div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">📚</div>
+        <div class="diff-title">韓国語学習も一緒にサポート</div>
+        <div class="diff-desc">語学堂在籍中に<span class="diff-accent">個別学習プランを提供</span>。ただ入学させて終わりではなく、現地での語学力アップまで伴走します。</div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">🏠</div>
+        <div class="diff-title">留学中の生活もフォロー</div>
+        <div class="diff-desc">住居探しから渡航後の生活相談まで<span class="diff-accent">現地スタッフが継続サポート</span>。「近くのスーパーどこ？」「バイトどう探す？」そんな相談も大歓迎です。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="staff-section" id="staff">
+  <div class="staff-inner">
+    <div class="section-label" style="background:rgba(232,114,26,.15);color:var(--orange);">スタッフ紹介</div>
+    <h2>現地にいるから、<br>リアルな情報をお届けできる。</h2>
+    <p class="section-desc">Be a Travelerは、実際に韓国で生活する日韓バイリンガルスタッフが運営しています。</p>
+    <div class="staff-grid">
+      <div class="staff-card">
+        <div class="staff-avatar jp">🎓</div>
+        <div>
+          <div class="staff-name">日本人スタッフ</div>
+          <div class="staff-role jp">Japanese Staff ｜ 延世大学 在学中</div>
+          <div class="staff-bio">現在、韓国・延世大学の学部に正規入学中の日本人スタッフが担当。自身の経験をもとに、語学堂から大学入学までのリアルな道のりをお伝えします。「自分が留学前に知りたかったこと」を全部サポートします。</div>
+          <span class="staff-tag" style="background:var(--orange-pale);color:var(--orange);">日本語 ネイティブ</span>
+        </div>
+      </div>
+      <div class="staff-card">
+        <div class="staff-avatar kr">🇰🇷</div>
+        <div>
+          <div class="staff-name">韓国人スタッフ</div>
+          <div class="staff-role kr">Korean Staff ｜ 日本語対応可</div>
+          <div class="staff-bio">日本語が堪能な韓国人スタッフが書類の韓国語添削・翻訳・現地情報の提供を担当。자기소개서や학업계획서のネイティブチェックから、住居・生活情報まで現地目線でサポートします。</div>
+          <span class="staff-tag" style="background:var(--green-pale);color:var(--green);">韓国語 ネイティブ ／ 日本語 対応可</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="section-label">サービス内容</div>
+  <h2>2つのコースで、<br>あなたの留学を支える。</h2>
+  <p class="section-desc">語学堂・大学学部正規入学、それぞれのコースに住居探しと書類添削が含まれています。</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-head">
+        <div class="service-icon">🏫</div>
+        <div class="service-title">語学堂入学コース</div>
+        <div class="service-desc">ソウル大・延世大・高麗大など人気語学堂への出願から渡航・現地生活まで一貫サポート。韓国語ゼロでも安心して始められます。</div>
+      </div>
+      <div class="service-includes">
+        <div class="includes-label">含まれるサポート</div>
+        <ul class="includes-list">
+          <li>語学堂の選定・出願手続き代行</li>
+          <li>出願書類の作成・添削（無制限）</li>
+          <li>日本語↔韓国語 翻訳サポート</li>
+          <li>住居探しサポート（寮・ハウスシェア等）</li>
+          <li>渡航前チェックリスト・生活準備案内</li>
+          <li>メールでの現地生活サポート（3ヶ月）</li>
+        </ul>
+      </div>
+    </div>
+    <div class="service-card green">
+      <div class="service-head">
+        <div class="service-icon">🎓</div>
+        <div class="service-title">大学学部 正規入学コース</div>
+        <div class="service-desc">韓国の大学への学部正規入学（新入学）を目指す方向けの本格サポート。志望校選定から入学後のフォローまで伴走します。</div>
+      </div>
+      <div class="service-includes">
+        <div class="includes-label" style="color:var(--green);">含まれるサポート</div>
+        <ul class="includes-list">
+          <li>志望校の選定・出願手続き代行</li>
+          <li>자기소개서・학업계획서の作成・添削（無制限）</li>
+          <li>日本語↔韓国語 翻訳サポート</li>
+          <li>住居探しサポート（寮・ハウスシェア等）</li>
+          <li>TOPIK対策アドバイス</li>
+          <li>メールでの現地生活サポート（6ヶ月）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:18px;padding:18px 22px;background:#FFF8F5;border-radius:14px;border-left:4px solid var(--orange);max-width:640px;">
+    <p style="font-size:13px;color:var(--mid);"><strong style="color:var(--orange);">⚠️ 対応範囲について：</strong>大学院・編入・交換留学の手続きは現在対応しておりません。</p>
+  </div>
+</section>
+
+<section class="learning-section" id="learning">
+  <div class="learning-inner">
+    <div class="section-label">韓国語学習プラン（オプション）</div>
+    <h2>語学堂在籍中に、<br>もっと伸びたい方へ。</h2>
+    <div class="learning-context">
+      <strong>📚 このプランについて：</strong>語学堂に在籍中の方を対象に、授業外での語学力アップをサポートするオプションサービスです。現在のレベル・目標・生活リズムに合わせた個別プランをご提案します。
+    </div>
+    <div class="levels-grid">
+      <div class="level-card"><div class="level-badge lv1">入門〜1級</div><div class="level-title">ハングルを定着させる</div><div class="level-target">語学堂入学直後</div><ul class="level-items"><li>ハングルの読み書き強化</li><li>授業の予習・復習サポート</li><li>日常会話の定着練習</li><li>おすすめアプリ紹介</li></ul></div>
+      <div class="level-card"><div class="level-badge lv2">2〜3級</div><div class="level-title">会話力を伸ばす</div><div class="level-target">TOPIK I 取得を目指す</div><ul class="level-items"><li>文法の定着サポート</li><li>日記・作文練習</li><li>発音・リスニング強化</li><li>TOPIK I 対策</li></ul></div>
+      <div class="level-card"><div class="level-badge lv3">3〜4級</div><div class="level-title">表現の幅を広げる</div><div class="level-target">TOPIK II 3〜4級を目標</div><ul class="level-items"><li>ドラマ・ニュースの活用</li><li>語彙・慣用表現の強化</li><li>韓国人との会話練習</li><li>TOPIK II 中級対策</li></ul></div>
+      <div class="level-card"><div class="level-badge lv4">4〜6級</div><div class="level-title">正規授業を目指す</div><div class="level-target">TOPIK II 5〜6級・正規入学レベル</div><ul class="level-items"><li>学術語彙・논문読解</li><li>발표・토론の練習</li><li>자기소개서の韓国語執筆</li><li>TOPIK II 上級対策</li></ul></div>
+      <div class="level-card"><div class="level-badge lv5">随時対応</div><div class="level-title">試験・書類対策</div><div class="level-target">出願・試験前に集中強化</div><ul class="level-items"><li>TOPIK 直前対策</li><li>자기소개서の添削</li><li>模擬面接サポート</li><li>スポット対応可</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="flow-section" id="flow">
+  <div class="flow-inner">
+    <div class="section-label">ご利用の流れ</div>
+    <h2 style="color:white;">シンプルな<br>6ステップで留学へ。</h2>
+    <p class="section-desc">相談から渡航後まで、ずっとそばにいます。</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-title">無料相談</div><div class="step-desc">メールでお気軽に</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-title">プラン提案</div><div class="step-desc">目標・予算・語学力に合わせて</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-title">書類準備</div><div class="step-desc">作成・添削・翻訳を丁寧に</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-title">出願手続き</div><div class="step-desc">語学堂・大学への出願を代行</div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-title">住居・渡航準備</div><div class="step-desc">住まい探しと渡航前の準備</div></div>
+      <div class="step"><div class="step-num">6</div><div class="step-title">渡航後もサポート</div><div class="step-desc">生活の疑問もメールで何でも相談</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pricing">
+  <div class="section-label">料金プラン</div>
+  <h2>シンプルで<br>わかりやすい料金。</h2>
+  <p class="section-desc">隠れた費用はありません。語学学習プランはオプションで追加できます。</p>
+  <div class="pricing-grid">
+    <div class="price-card featured">
+      <div class="featured-badge">語学堂を目指す方に</div>
+      <div class="plan-name">語学堂コース</div>
+      <div class="price-main"><span class="price-currency">¥</span><span class="price-num">49,800</span></div>
+      <div class="price-tax">税込 / 一括払い</div>
+      <div class="plan-desc">語学堂入学から住居・現地生活まで一貫サポート</div>
+      <ul class="plan-features">
+        <li>語学堂の選定・出願手続き代行</li>
+        <li>書類作成・添削・翻訳（無制限）</li>
+        <li>住居探しサポート</li>
+        <li>渡航前準備サポート</li>
+        <li>メール現地サポート（3ヶ月）</li>
+        <li class="opt">＋ 韓国語学習プラン（オプション追加可）</li>
+      </ul>
+      <a href="#contact" class="plan-btn btn-fill">このプランで申し込む</a>
+    </div>
+    <div class="price-card">
+      <div class="plan-name">語学堂コース ＋ 学習プラン</div>
+      <div class="price-main"><span class="price-currency">¥</span><span class="price-num">79,800</span></div>
+      <div class="price-tax">税込 / 一括払い</div>
+      <div class="plan-note">語学堂コース（¥49,800）＋ 学習プラン（¥30,000）</div>
+      <div class="plan-desc">語学堂在籍中に韓国語力もしっかり伸ばしたい方へ</div>
+      <ul class="plan-features">
+        <li>語学堂コースの全内容を含む</li>
+        <li>現在レベル診断・個別学習プラン設計</li>
+        <li>週次の進捗フォロー</li>
+        <li>TOPIK対策サポート</li>
+        <li>자기소개서の韓国語添削</li>
+      </ul>
+      <a href="#contact" class="plan-btn btn-outline">このプランで申し込む</a>
+    </div>
+    <div class="price-card" style="border-color:var(--green);">
+      <div class="plan-name">大学学部 正規入学コース</div>
+      <div class="price-main"><span class="price-currency" style="color:var(--green);">¥</span><span class="price-num" style="color:var(--green);">49,800</span></div>
+      <div class="price-tax">税込 / 一括払い（出願1校の場合）</div>
+      <div class="plan-note" style="color:var(--green);">複数校出願は別途ご相談ください</div>
+      <div class="plan-desc">大学学部正規入学を目指す方への本格サポート</div>
+      <ul class="plan-features">
+        <li>志望校選定・出願手続き代行</li>
+        <li>자기소개서・학업계획서の添削（無制限）</li>
+        <li>住居探しサポート</li>
+        <li>TOPIK対策アドバイス</li>
+        <li>メール現地サポート（6ヶ月）</li>
+      </ul>
+      <a href="#contact" class="plan-btn" style="border:2px solid var(--green);color:var(--green);display:block;text-align:center;padding:13px;border-radius:50px;font-weight:700;font-size:14px;">まずは相談する</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="section-label">よくある質問</div>
+  <h2>みんなの疑問に<br>答えます。</h2>
+  <p class="section-desc">お問い合わせ前にぜひご確認ください。</p>
+  <div class="faq-list">
+    <div class="faq-item"><div class="faq-q">韓国語が全くできなくても大丈夫ですか？<span class="arrow">›</span></div><div class="faq-a">もちろん大丈夫です！語学堂はゼロから韓国語を学ぶための場所です。手続きはすべて日本語で対応し、書類の翻訳も代行します。韓国語学習プランもゼロから設計できます。</div></div>
+    <div class="faq-item"><div class="faq-q">大学院・編入・交換留学は対応していますか？<span class="arrow">›</span></div><div class="faq-a">現在は対応しておりません。語学堂入学・大学学部正規入学に特化したサービスです。</div></div>
+    <div class="faq-item"><div class="faq-q">住居探しはどこまでサポートしてもらえますか？<span class="arrow">›</span></div><div class="faq-a">希望条件・予算をお伺いして大学寮・ハウスシェア・ワンルームなどの選択肢をご提案します。現地スタッフが実情を踏まえてアドバイスします。契約手続き自体の代行は含みませんが、進め方のサポートをいたします。</div></div>
+    <div class="faq-item"><div class="faq-q">韓国語学習プランは語学堂に入ってから申し込めますか？<span class="arrow">›</span></div><div class="faq-a">はい、語学堂在籍中であればいつでも追加できます。「授業についていけるか不安」「TOPIK受けたい」など、気軽にご相談ください。</div></div>
+    <div class="faq-item"><div class="faq-q">メールでいつでも相談できますか？<span class="arrow">›</span></div><div class="faq-a">はい！堅苦しいやりとりは一切不要です。「なんとなく不安」「ちょっと聞きたいだけ」という相談も大歓迎。友達に話しかけるような気軽さでどうぞ。</div></div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <h2>まずは気軽に話しかけてください。</h2>
+  <p>「まだ漠然と考えているだけ」でも大丈夫。一緒に考えましょう。</p>
+  <a href="#contact" class="btn-white">無料相談を申し込む →</a>
+</section>
+
+<section class="section" id="contact">
+  <div class="section-label">お問い合わせ</div>
+  <h2>気軽にご連絡ください。</h2>
+  <p class="section-desc">返信は通常1〜2営業日以内。メールでの相談をお待ちしています。</p>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div><h4>メール（お問い合わせ）</h4><p>timetroubler0813@gmail.com</p></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">💬</div>
+        <div><h4>LINE公式アカウント</h4><p style="color:var(--light);">近日公開予定</p></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">⏰</div>
+        <div><h4>受付時間</h4><p>月〜金 10:00〜20:00（韓国時間）<br>土日祝はメール対応のみ</p></div>
+      </div>
+      <div style="padding:18px 20px;background:var(--green-pale);border-radius:14px;border-left:4px solid var(--green);">
+        <p style="font-size:13px;color:var(--green);font-weight:700;margin-bottom:5px;">🌿 初回相談は無料です</p>
+        <p style="font-size:12px;color:var(--mid);">「まだ漠然と考えているだけ」でも、「とりあえず話を聞きたい」でも大歓迎。お気軽にメールください。</p>
+      </div>
+    </div>
+    <div class="contact-form">
+      <div class="form-group"><label>お名前</label><input type="text" placeholder="山田 太郎"></div>
+      <div class="form-group"><label>メールアドレス</label><input type="email" placeholder="example@email.com"></div>
+      <div class="form-group">
+        <label>ご相談の種類</label>
+        <select>
+          <option>語学堂入学コース</option>
+          <option>語学堂コース ＋ 韓国語学習プラン</option>
+          <option>大学学部 正規入学コース</option>
+          <option>その他・まずは話を聞きたい</option>
+        </select>
+      </div>
+      <div class="form-group"><label>ご希望の留学時期（任意）</label><input type="text" placeholder="例：2025年春学期"></div>
+      <div class="form-group"><label>ご質問・ご相談内容</label><textarea placeholder="韓国語はゼロですが語学堂に行きたいです。何から始めればいいか教えてください！"></textarea></div>
+      <button class="form-submit" onclick="window.location.href='mailto:timetroubler0813@gmail.com?subject=【Be a Traveler】無料相談のお申し込み'">無料相談を送信する</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">Be a <span>Traveler</span></div>
+        <div class="footer-tagline">韓国留学を夢で終わらせない。<br>あなたの挑戦を、全力でサポートします。</div>
+      </div>
+      <div class="footer-links">
+        <h4>サービス</h4>
+        <ul>
+          <li><a href="#services">語学堂入学コース</a></li>
+          <li><a href="#services">大学学部 正規入学コース</a></li>
+          <li><a href="#learning">韓国語学習プラン</a></li>
+          <li><a href="#pricing">料金プラン</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>情報</h4>
+        <ul>
+          <li><a href="#difference">選ばれる理由</a></li>
+          <li><a href="#staff">スタッフ紹介</a></li>
+          <li><a href="#faq">よくある質問</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Be a Traveler. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(q=>{
+    q.addEventListener('click',()=>{
+      const item=q.parentElement;
+      const wasOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+      if(!wasOpen)item.classList.add('open');
+    });
+  });
+</script>
+</html>
